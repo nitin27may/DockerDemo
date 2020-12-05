@@ -1,4 +1,4 @@
-name: ci
+name: Image Build and Push to Registry
 
 on:
   push:
@@ -8,6 +8,9 @@ jobs:
   main:
     runs-on: Ubuntu-20.04
     steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
